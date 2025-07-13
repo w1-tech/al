@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL Minecraft 服务器 - 方块世界的无限可能</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjMwcHgiIGhlaWdodD0iMzBweCIgc3R5bGU9InNoYXBlLXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IHRleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjsgaW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTsgZmlsbC1ydWxlOmV2ZW5vZGQ7IGNsaXAtcnVsZTpldmVub2RkIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM4NGQ1NjAiIGQ9Ik0gLTAuNSwtMC41IEMgNy4xNjY2NywtMC41IDE0LjgzMzMsLTAuNSAyMi41LC0wLjVDIDIyLjUsNi41IDIyLjUsMTMuNSAyMi41LDIwLjVDIDE0LjgzMzMsMjAuNSA3LjE2NjY3LDIwLjUgLTAuNSwyMC41QyAtMC41LDEzLjUgLTAuNSw2LjUgLTAuNSwtMC41IFoiLz48L2c+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM1MmEyMzQiIGQ9Ik0gMjIuNSwtMC41IEMgMzEuODMzMywtMC41IDQxLjE2NjcsLTAuNSA1MC41LC0wLjVDIDUwLjUsNi41IDUwLjUsMTMuNSA1MC41LDIwLjVDIDUwLjUsMjkuNSA1MC41LDM4LjUgNTAuNSw0Ny41QyA1MC4xNjY3LDQ3LjUgNDkuODMzMyw0Ny41IDQ5LjUsNDcuNUMgNDkuNSwzOC41IDQ5LjUsMjkuNSA0OS41LDIwLjVDIDQwLjUsMjAuNSAzMS41LDIwLjUgMjIuNSwyMC41QyAyMi41LDEzLjUgMjIuNSw2LjUgMjIuNSwtMC41IFoiLz48L2c+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM2YWMzNDciIGQ9Ik0gNTAuNSwtMC41IEMgNTYuMTY2NywtMC41IDYxLjgzMzMsLTAuNSA2Ny41LC0wLjVDIDY3LjUsNi41IDY3LjUsMTMuNSA2Ny41LDIwLjVDIDYxLjgzMzMsMjAuNSA1Ni4xNjY3LDIwLjUgNTAuNSwyMC41QyA1MC41LDEzLjUgNTAuNSw2LjUgNTAuNSwtMC41IFoiLz48L2c+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM1MWE0MzQiIGQ9Ik0gLTAuNSwyMC41IEMgNy4xNjY2NywyMC41IDE0LjgzMzMsMjAuNSAyMi41LDIwLjVDIDIyLjUsMjkuNSAyMi41LDM4LjUgMjIuNSw0Ny41QyAxNC44MzMzLDQ3LjUgNy4xNjY2Nyw0Ny41IC0wLjUsNDcuNUMgLTAuNSwzOC41IC0wLjUsMjkuNSAtMC41LDIwLjUgWiIvPjwvZz4KPGc+PHBhdGggc3R5bGU9Im9wYWNpdHk6MSIgZmlsbD0iIzYzNDAyYiIgZD0iTSAyMi41LDIwLjUgQyAzMS41LDIwLjUgNDAuNSwyMC41IDQ5LjUsMjAuNUMgNDkuNSwyOS41IDQ5LjUsMzguNSA0OS41LDQ3LjVDIDQwLjUsNDcuNSAzMS41LDQ3LjUgMjIuNSw0Ny41QyAyMi41LDM4LjUgMjIuNSwyOS41IDIyLjUsMjAuNSBaIi8+PC9nPgo8Zz48cGF0aCBzdHlsZT0ib3BhY2l0eToxIiBmaWxsPSIjNTFhNDM0IiBkPSJNIDUwLjUsMjAuNSBDIDU2LjE2NjcsMjAuNSA2MS44MzMzLDIwLjUgNjcuNSwyMC41QyA2Ny41LDI5LjUgNjcuNSwzOC41IDY3LjUsNDcuNUMgNjEuODMzMyw0Ny41IDU2LjE2NjcsNDcuNSA1MC41LDQ3LjVDIDUwLjUsMzguNSA1MC41LDI5LjUgNTAuNSwyMC41IFoiLz48L2c+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM3NjZhNjUiIGQ9Ik0gMjIuNSw0Ny41IEMgMzEuNSw0Ny41IDQwLjUsNDcuNSA0OS41LDQ3LjVDIDQ5LjUsNDcuODMzMyA0OS41LDQ4LjE2NjcgNDkuNSw0OC41QyA0MC44MzMzLDQ4LjUgMzIuMTY2Nyw0OC41IDIzLjUsNDguNUMgMjMuNSw1NC41IDIzLjUsNjAuNSAyMy41LDY2LjVDIDIzLjE2NjcsNjYuNSAyMi44MzMzLDY2LjUgMjIuNSw2Ni41QyAyMi41LDYwLjE2NjcgMjIuNSw1My44MzMzIDIyLjUsNDcuNSBaIi8+PC9nPgo8Zz48cGF0aCBzdHlsZT0ib3BhY2l0eToxIiBmaWxsPSIjNjM0MDJiIiBkPSJNIC0wLjUsNDcuNSBDIDcuMTY2NjcsNDcuNSAxNC44MzMzLDQ3LjUgMjIuNSw0Ny41QyAyMi41LDUzLjgzMzMgMjIuNSw2MC4xNjY3IDIyLjUsNjYuNUMgMTQuODMzMyw2Ni41IDcuMTY2NjcsNjYuNSAtMC41LDY2LjVDIC0wLjUsNjAuMTY2NyAtMC41LDUzLjgzMzMgLTAuNSw0Ny41IFoiLz48L2c+CjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjEiIGZpbGw9IiM5NzhmODkiIGQ9Ik0gNDkuNSw0OC41IEMgNDkuNSw1NC41IDQ5LjUsNjAuNSA0OS41LDY2LjVDIDQwLjgzMzMsNjYuNSAzMi4xNjY3LDY2LjUgMjMuNSw2Ni41QyAyMy41LDYwLjUgMjMuNSw1NC41IDIzLjUsNDguNUMgMzIuMTY2Nyw0OC41IDQwLjgzMzMsNDguNSA0OS41LDQ4LjUgWiIvPjwvZz4KPGc+PHBhdGggc3R5bGU9Im9wYWNpdHk6MSIgZmlsbD0iIzYzNDAyYiIgZD0iTSA0OS41LDQ3LjUgQyA0OS44MzMzLDQ3LjUgNTAuMTY2Nyw0Ny41IDUwLjUsNDcuNUMgNTYuMTY2Nyw0Ny41IDYxLjgzMzMsNDcuNSA2Ny41LDQ3LjVDIDY3LjUsNTMuODMzMyA2Ny41LDYwLjE2NjcgNjcuNSw2Ni41QyA2MS41LDY2LjUgNTUuNSw2Ni41IDQ5LjUsNjYuNUMgNDkuNSw2MC41IDQ5LjUsNTQuNSA0OS41LDQ4LjVDIDQ5LjUsNDguMTY2NyA0OS41LDQ3LjgzMzMgNDkuNSw0Ny41IFoiLz48L2c+Cjwvc3ZnPg==" type="image/svg+xml">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3D5A80',
+            secondary: '#98C1D9',
+            accent: '#EE6C4D',
+            dark: '#293241',
+            light: '#E0FBFC'
+          },
+          fontFamily: {
+            minecraft: ['"Minecraftia"', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .text-shadow-lg {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      }
+      .bg-glass {
+        background: rgba(41, 50, 65, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .block-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      .pulse-slow {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Minecraftia&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-dark text-white overflow-x-hidden">
+  <!-- 动态背景画布 -->
+  <canvas id="background-canvas" class="fixed inset-0 z-0"></canvas>
+  
+  <!-- 导航栏 -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30px" height="30px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g><path style="opacity:1" fill="#84d560" d="M -0.5,-0.5 C 7.16667,-0.5 14.8333,-0.5 22.5,-0.5C 22.5,6.5 22.5,13.5 22.5,20.5C 14.8333,20.5 7.16667,20.5 -0.5,20.5C -0.5,13.5 -0.5,6.5 -0.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#52a234" d="M 22.5,-0.5 C 31.8333,-0.5 41.1667,-0.5 50.5,-0.5C 50.5,6.5 50.5,13.5 50.5,20.5C 50.5,29.5 50.5,38.5 50.5,47.5C 50.1667,47.5 49.8333,47.5 49.5,47.5C 49.5,38.5 49.5,29.5 49.5,20.5C 40.5,20.5 31.5,20.5 22.5,20.5C 22.5,13.5 22.5,6.5 22.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#6ac347" d="M 50.5,-0.5 C 56.1667,-0.5 61.8333,-0.5 67.5,-0.5C 67.5,6.5 67.5,13.5 67.5,20.5C 61.8333,20.5 56.1667,20.5 50.5,20.5C 50.5,13.5 50.5,6.5 50.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#51a434" d="M -0.5,20.5 C 7.16667,20.5 14.8333,20.5 22.5,20.5C 22.5,29.5 22.5,38.5 22.5,47.5C 14.8333,47.5 7.16667,47.5 -0.5,47.5C -0.5,38.5 -0.5,29.5 -0.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M 22.5,20.5 C 31.5,20.5 40.5,20.5 49.5,20.5C 49.5,29.5 49.5,38.5 49.5,47.5C 40.5,47.5 31.5,47.5 22.5,47.5C 22.5,38.5 22.5,29.5 22.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#51a434" d="M 50.5,20.5 C 56.1667,20.5 61.8333,20.5 67.5,20.5C 67.5,29.5 67.5,38.5 67.5,47.5C 61.8333,47.5 56.1667,47.5 50.5,47.5C 50.5,38.5 50.5,29.5 50.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#766a65" d="M 22.5,47.5 C 31.5,47.5 40.5,47.5 49.5,47.5C 49.5,47.8333 49.5,48.1667 49.5,48.5C 40.8333,48.5 32.1667,48.5 23.5,48.5C 23.5,54.5 23.5,60.5 23.5,66.5C 23.1667,66.5 22.8333,66.5 22.5,66.5C 22.5,60.1667 22.5,53.8333 22.5,47.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M -0.5,47.5 C 7.16667,47.5 14.8333,47.5 22.5,47.5C 22.5,53.8333 22.5,60.1667 22.5,66.5C 14.8333,66.5 7.16667,66.5 -0.5,66.5C -0.5,60.1667 -0.5,53.8333 -0.5,47.5 Z"/></g>
+<g><path style="opacity:1" fill="#978f89" d="M 49.5,48.5 C 49.5,54.5 49.5,60.5 49.5,66.5C 40.8333,66.5 32.1667,66.5 23.5,66.5C 23.5,60.5 23.5,54.5 23.5,48.5C 32.1667,48.5 40.8333,48.5 49.5,48.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M 49.5,47.5 C 49.8333,47.5 50.1667,47.5 50.5,47.5C 56.1667,47.5 61.8333,47.5 67.5,47.5C 67.5,53.8333 67.5,60.1667 67.5,66.5C 61.5,66.5 55.5,66.5 49.5,66.5C 49.5,60.5 49.5,54.5 49.5,48.5C 49.5,48.1667 49.5,47.8333 49.5,47.5 Z"/></g>
+</svg>
+</i>
+        <span class="font-minecraft text-xl md:text-2xl font-bold text-accent"><svg width="70" height="50" xmlns="http://www.w3.org/2000/svg" _mstHash="486" _mstTextHash="6362408">
+ <g id="Layer_1">
+  <title _mstHash="1" _mstTextHash="5637814">第 1 层</title>
+  <g id="svg_2">
+   <rect stroke="#00ffff" stroke-width="3" id="svg_3" height="43" width="378" y="158.50001" x="235.96732" fill="none"/>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_5" y="172.5" x="293.96732" stroke-width="0" stroke="#e2e21d" fill="#000000"/>
+   <text font-weight="bold" transform="matrix(1 0 0 1.03159 0 -7.27824)" stroke="#e2e21d" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_8" y="188.61587" x="235.96733" stroke-width="0" fill="#ef0909">NAT PENETRATION COALITION</text>
+  </g>
+  <text stroke-dasharray="5,2,2,2,2,2" font-weight="bold" transform="matrix(1.0865 0 0 1 -1.42346 0)" stroke="#ff7f00" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_6" y="33.99476" x="11.78059" fill="#83f70e">A</text>
+  <text transform="matrix(1.17387 0 0 1 -6.98563 0)" stroke="#ff7f00" stroke-width="0.5" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_7" y="33.6773" x="38.81884" stroke-dasharray="5,5" fill="#00bf5f">L</text>
+ </g>
+
+</svg></span>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-accent transition-colors">关于服务器</a>
+        <a href="#features" class="hover:text-accent transition-colors">特色玩法</a>
+        <a href="#gallery" class="hover:text-accent transition-colors">游戏截图</a>
+        <a href="#rules" class="hover:text-accent transition-colors">服务器规则</a>
+        <a href="#join" class="hover:text-accent transition-colors">加入我们</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-glass px-4 py-2 border-t border-secondary/30">
+      <div class="flex flex-col space-y-3 pb-3">
+        <a href="#about" class="hover:text-accent transition-colors">关于服务器</a>
+        <a href="#features" class="hover:text-accent transition-colors">特色玩法</a>
+        <a href="#gallery" class="hover:text-accent transition-colors">游戏截图</a>
+        <a href="#rules" class="hover:text-accent transition-colors">服务器规则</a>
+        <a href="#join" class="hover:text-accent transition-colors">加入我们</a>
+      </div>
+    </div>
+  </nav>
+  <!-- 英雄区域 -->
+  <header class="relative min-h-screen flex items-center justify-center pt-16">
+    <div class="container mx-auto px-4 z-10 text-center">
+      <div style="text-align:left;margin:10px;">    
+    <!-- 消息滚动 START每五秒滚动一次的面板 -->
+  <marquee direction="up" height="40" onMouseOut="this.start()" onMouseOver="this.stop()" scrollAmount="1" scrollDelay="1">
+        <p align="center">
+            <span class="gonggao">公告：</span>2025年1月1日，服务器维护中，暂时无法进入</p>
+        <p align="center">更多请查看<b>服务器交流群</b>中消息</p>
+        <p align="center">
+          <span class="gonggao1">服务器交流群:</span><span class="gonggao2">1022888564</span></p>
+        <p align="center">ps：如网站出现乱码,请刷新后重试。</p>
+  </marquee>
+</div>
+      <div class="hero-badge" id="heroStatus">
+        <div class="status-dot"></div>
+        <span>正在获取服务器状态...</span>
+      </div>
+      <h1 class="font-minecraft text-[clamp(2.5rem,8vw,5rem)] font-bold mb-6 text-shadow-lg leading-tight">
+        探索无限<br class="md:hidden">创造可能
+      </h1>
+      <p class="text-[clamp(1rem,3vw,1.5rem)] mb-10 max-w-3xl mx-auto text-shadow text-light/90">
+        AL Minecraft服务器 - 一个充满创意与冒险的方块世界，
+        在这里与好友共同建造、探索、冒险！
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#join" class="bg-accent hover:bg-accent/80 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+          立即加入
+        </a>
+        <a href="#features" class="bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-dark font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+          了解更多
+        </a>
+      </div>
+      
+      <!-- 服务器状态卡片 -->
+      <div class="mt-16 inline-block bg-glass rounded-xl p-4 md:p-6 border border-secondary/30 shadow-xl transform hover:scale-105 transition-transform">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div>
+            <p class="text-sm opacity-80">服务器状态</p>
+            <div class="flex items-center mt-1">
+              <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2 pulse-slow" id="statusDot"></span>
+              <span class="font-minecraft text-accent" id="statusText">在线</span>
+            </div>
+          </div>
+          <div class="h-8 md:h-0 md:w-px bg-secondary/30"></div>
+          <div>
+            <p class="text-sm opacity-80">版本支持</p>
+            <p class="font-minecraft" id="gameVersion">1.21.x</p>
+          </div>
+          <div class="h-8 md:h-0 md:w-px bg-secondary/30"></div>
+          <div>
+            <p class="text-sm opacity-80">当前在线</p>
+            <p class="font-minecraft" id="online-count">未知 人</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 滚动提示 -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fa fa-angle-down text-2xl"></i>
+      </div>
+    </div>
+  </header>
+  <!-- 关于服务器 -->
+  <section id="about" class="py-20 relative">
+    <div class="container mx-auto px-4 z-10 relative">
+      <h2 class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">关于AL服务器</h2>
+      
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-secondary">我们的故事</h3>
+          <p class="mb-4 text-lg leading-relaxed">
+            AL服务器成立于2022年，由一群热爱Minecraft的玩家共同创建。我们致力于打造一个公平、友好、充满创意的游戏环境，让每一位玩家都能在这里找到乐趣。
+          </p>
+          <p class="mb-6 text-lg leading-relaxed">
+            我们的服务器采用高性能硬件，确保流畅的游戏体验。专业的管理团队7x24小时维护，及时处理各类问题，保障服务器稳定运行。
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="bg-glass rounded-lg p-4 border border-secondary/20 text-center">
+              <p class="text-3xl font-minecraft text-accent">10+</p>
+              <p class="text-sm mt-1">特色插件</p>
+            </div>
+            <div class="bg-glass rounded-lg p-4 border border-secondary/20 text-center">
+              <p class="text-3xl font-minecraft text-accent">50+</p>
+              <p class="text-sm mt-1">注册玩家</p>
+            </div>
+            <div class="bg-glass rounded-lg p-4 border border-secondary/20 text-center">
+              <p class="text-3xl font-minecraft text-accent">DDOS防护</p>
+              <p class="text-sm mt-1">安全防护</p>
+            </div>
+            <div class="bg-glass rounded-lg p-4 border border-secondary/20 text-center">
+              <p class="text-3xl font-minecraft text-accent">3+</p>
+              <p class="text-sm mt-1">游戏世界</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
+            <img src="https://i.mcmod.cn/class/cover/20250407/1744012672_2_PmfN.jpg@480x300.jpg" alt="AL服务器截图" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-glass p-3 rounded-lg shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-500 border border-secondary/30 hidden md:block">
+            <p class="font-minecraft text-accent"><p id="business-time"></p></p>
+          </div>
+          <div class="absolute -top-6 -right-6 bg-glass p-3 rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500 border border-secondary/30 hidden md:block">
+            <p class="font-minecraft text-accent"> uptime 99.8%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 特色玩法 -->
+  <section id="features" class="py-20 bg-dark/70 relative">
+    <div class="container mx-auto px-4 z-10 relative">
+      <h2 class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">特色玩法</h2>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 特色1 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-map-signs text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">多世界探索</h3>
+          <p>包含生存世界、创造世界、资源世界和迷你游戏世界，满足不同玩家的需求，提供多样化的游戏体验。</p>
+        </div>
+        
+        <!-- 特色2 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-trophy text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">玩家成就系统</h3>
+          <p><img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/1169720_AqeIJQMX.png"></p>
+        </div>
+        
+        <!-- 特色3 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-shopping-cart text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">经济系统</h3>
+          <p>完善的玩家经济体系，通过交易、任务、出售物品获取游戏货币，购买特殊物品和服务。</p>
+        </div>
+        
+        <!-- 特色4 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-users text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">社区互动</h3>
+          <p>支持玩家结婚、组队、创建公会，举办定期活动和比赛，增强玩家间的互动和社区凝聚力。</p>
+        </div>
+        
+        <!-- 特色5 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-cogs text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">自定义插件</h3>
+          <p>多种自主开发的特色插件，提供独特的游戏机制和功能，带来与众不同的游戏体验。</p>
+        </div>
+        
+        <!-- 特色6 -->
+        <div class="bg-glass rounded-xl p-6 border border-secondary/30 hover:border-accent/50 transition-all transform hover:-translate-y-2 duration-300">
+          <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-shield text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary">安全防护</h3>
+          <p>多重反作弊系统和安全机制，确保公平的游戏环境，让所有玩家都能享受纯粹的游戏乐趣。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 游戏截图 -->
+  <section id="gallery" class="py-20 relative">
+    <div class="container mx-auto px-4 z-10 relative">
+      <h2 class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">游戏截图</h2>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/marketplace/Homepage_Hero-A-Thumbnail-0_SummerSale_220x97_01.jpg" alt="游戏截图1" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_SummerDrop_Hero_DotNet_Homepage_220x97.jpg" alt="游戏截图2" class="w-full h-64 object-cover transition-transform duration-500           group-hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft_TripleBundle_NetHomepage_220x97.jpg" alt="游戏截图3" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <!--<div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://picsum.photos/id/188/600/400" alt="游戏截图4" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://picsum.photos/id/235/600/400" alt="游戏截图5" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="overflow-hidden rounded-lg cursor-pointer group">
+          <img src="https://picsum.photos/id/246/600/400" alt="游戏截图6" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+      </div>-->
+      
+      <!-- 截图查看器模态框 -->
+      <div id="image-modal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center">
+        <button id="close-modal" class="absolute top-4 right-4 text-white text-3xl hover:text-accent transition-colors">
+          <i class="fa fa-times"></i>
+        </button>
+        <img id="modal-image" src="" alt="大图预览" class="max-w-[90%] max-h-[80vh] object-contain">
+      </div>
+    </div>
+  </section>
+  <!--精彩视频-->
+  <div id='video' class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">视频</div>
+  <section id="video" class="1">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>精彩视频展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 可选：引入动画库和玻璃卡片样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0658d2dc;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        .video-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 24px;
+            background: rgba(9, 75, 244, 0);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9比例 */
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        .video-info {
+            text-align: center;
+        }
+        .video-title {
+            font-size: 2em;
+            margin: 0 0 12px 0;
+            color: #333;
+        }
+        .video-desc {
+            font-size: 1.1em;
+            color: #55555500;
+        }
+        .gonggao1 {
+          color: red; 
+          font-weight: bold;
+        }
+        .gonggao2 {
+          color: rgb(81, 255, 0); 
+          font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <div class="video-player glass-card animate__animated animate__zoomIn" id="videoPlayer">
+            <div class="video-wrapper">
+                <iframe 
+                    id="videoFrame" 
+                    src="https://player.bilibili.com/player.html?aid=1350357561&bvid=BV1AB421z7LS&cid=1434513355&page=1" 
+                    frameborder="0" 
+                    allowfullscreen 
+                    style="width: 100%; height: 100%;">
+                </iframe>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+  </section>
+    
+  <!-- 服务器规则 -->
+  <section id="rules" class="py-20 bg-dark/70 relative">
+    <div class="container mx-auto px-4 z-10 relative">
+      <h2 class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">服务器规则</h2>
+      
+      <div class="max-w-3xl mx-auto bg-glass rounded-xl p-6 md:p-8 border border-secondary/30">
+        <p class="text-center mb-8 text-lg">为了维护良好的游戏环境，所有玩家必须遵守以下规则</p>
+        
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+              <span class="font-bold">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-secondary text-lg">禁止作弊行为</h3>
+              <p>使用任何作弊客户端、外挂、脚本等工具将被永久封禁，包括X-Ray纹理包。</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+              <span class="font-bold">2</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-secondary text-lg">禁止 griefing 行为</h3>
+              <p>不得破坏他人建筑、偷窃物品或进行任何形式的恶意破坏，发现将视情节轻重给予处罚。</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+              <span class="font-bold">3</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-secondary text-lg">文明交流</h3>
+              <p>禁止发表辱骂、歧视、色情、政治敏感等不当言论，保持聊天频道文明友好。</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+              <span class="font-bold">4</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-secondary text-lg">禁止利用漏洞</h3>
+              <p>发现服务器漏洞应及时向管理员报告，不得利用漏洞获取不正当利益。</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+              <span class="font-bold">5</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-secondary text-lg">尊重他人</h3>
+              <p>尊重每一位玩家，不得进行骚扰、威胁或其他影响他人游戏体验的行为。</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-10 pt-6 border-t border-secondary/30">
+          <p class="text-center">违反规则将受到警告、禁言、临时封禁或永久封禁等处罚</p>
+          <p class="text-center mt-2">有任何问题可联系管理员：<span class="text-accent">admin@alserver.com</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 加入我们 -->
+  <section id="join" class="py-20 relative">
+    <div class="container mx-auto px-4 z-10 relative">
+      <h2 class="font-minecraft text-[clamp(1.8rem,4vw,3rem)] font-bold mb-12 text-center text-accent text-shadow">加入我们</h2>
+      
+      <div class="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
+        <div class="bg-glass rounded-xl p-6 md:p-8 border border-secondary/30">
+          <h3 class="text-2xl font-bold mb-6 text-secondary">连接服务器</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm mb-2 opacity-80">服务器地址</label>
+              <div class="flex">
+                <input type="text" value="mc.ailisi6.top" class="flex-1 bg-dark/50 border border-secondary/50 rounded-l-lg px-4 py-2 focus:outline-none focus:border-accent" readonly>
+                <button id="copy-ip" class="bg-primary hover:bg-primary/80 text-white px-4 rounded-r-lg transition-colors">
+                  复制
+                </button>
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm mb-2 opacity-80">支持版本</label>
+              <p id="supportedVersion">1.21.0 - 1.21.9（推荐1.21.9）</p>
+            </div>
+            
+            <div>
+              <label class="block text-sm mb-2 opacity-80">服务器端口</label>
+              <p id="serverPort">默认端口（25565）</p>
+            </div>
+            
+            <div>
+              <label class="block text-sm mb-2 opacity-80">客户端要求</label>
+              <p>支持正版</p>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="font-bold mb-3 text-secondary">加入社区</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-[#7289DA] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <i class="fa fa-discord"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-[#E60023] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <i class="fa fa-youtube-play"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-secondary">如何加入</h3>
+          
+          <div class="space-y-6">
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4 text-dark font-bold">
+                1
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">启动Minecraft</h4>
+                <p>确保你的游戏版本为1.21.0 - 1.21.9</p>
+              </div>
+            </div>
+            
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4 text-dark font-bold">
+                2
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">添加服务器</h4>
+                <p>点击"多人游戏" -> "添加服务器"，输入服务器名称和地址</p>
+              </div>
+            </div>
+            
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4 text-dark font-bold">
+                3
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">加入游戏</h4>
+                <p>选择AL服务器，点击"加入服务器"即可开始你的冒险</p>
+              </div>
+            </div>
+            
+            <div class="flex">
+              <div class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4 text-dark font-bold">
+                4
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">完成新手引导</h4>
+                <p>首次加入会有简单引导，帮助你快速熟悉服务器玩法</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 p-4 bg-primary/20 rounded-lg border border-primary/40">
+            <p class="flex items-start">
+              <i class="fa fa-info-circle text-accent mt-1 mr-2"></i>
+              <span>新玩家加入可获得新手礼包，输入指令 <code class="bg-dark/50 px-1 rounded">/newplayer</code> 领取</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 页脚 -->
+  <footer class="bg-dark py-10 border-t border-secondary/20 relative z-10">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30px" height="30px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g><path style="opacity:1" fill="#84d560" d="M -0.5,-0.5 C 7.16667,-0.5 14.8333,-0.5 22.5,-0.5C 22.5,6.5 22.5,13.5 22.5,20.5C 14.8333,20.5 7.16667,20.5 -0.5,20.5C -0.5,13.5 -0.5,6.5 -0.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#52a234" d="M 22.5,-0.5 C 31.8333,-0.5 41.1667,-0.5 50.5,-0.5C 50.5,6.5 50.5,13.5 50.5,20.5C 50.5,29.5 50.5,38.5 50.5,47.5C 50.1667,47.5 49.8333,47.5 49.5,47.5C 49.5,38.5 49.5,29.5 49.5,20.5C 40.5,20.5 31.5,20.5 22.5,20.5C 22.5,13.5 22.5,6.5 22.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#6ac347" d="M 50.5,-0.5 C 56.1667,-0.5 61.8333,-0.5 67.5,-0.5C 67.5,6.5 67.5,13.5 67.5,20.5C 61.8333,20.5 56.1667,20.5 50.5,20.5C 50.5,13.5 50.5,6.5 50.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#51a434" d="M -0.5,20.5 C 7.16667,20.5 14.8333,20.5 22.5,20.5C 22.5,29.5 22.5,38.5 22.5,47.5C 14.8333,47.5 7.16667,47.5 -0.5,47.5C -0.5,38.5 -0.5,29.5 -0.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M 22.5,20.5 C 31.5,20.5 40.5,20.5 49.5,20.5C 49.5,29.5 49.5,38.5 49.5,47.5C 40.5,47.5 31.5,47.5 22.5,47.5C 22.5,38.5 22.5,29.5 22.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#51a434" d="M 50.5,20.5 C 56.1667,20.5 61.8333,20.5 67.5,20.5C 67.5,29.5 67.5,38.5 67.5,47.5C 61.8333,47.5 56.1667,47.5 50.5,47.5C 50.5,38.5 50.5,29.5 50.5,20.5 Z"/></g>
+<g><path style="opacity:1" fill="#766a65" d="M 22.5,47.5 C 31.5,47.5 40.5,47.5 49.5,47.5C 49.5,47.8333 49.5,48.1667 49.5,48.5C 40.8333,48.5 32.1667,48.5 23.5,48.5C 23.5,54.5 23.5,60.5 23.5,66.5C 23.1667,66.5 22.8333,66.5 22.5,66.5C 22.5,60.1667 22.5,53.8333 22.5,47.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M -0.5,47.5 C 7.16667,47.5 14.8333,47.5 22.5,47.5C 22.5,53.8333 22.5,60.1667 22.5,66.5C 14.8333,66.5 7.16667,66.5 -0.5,66.5C -0.5,60.1667 -0.5,53.8333 -0.5,47.5 Z"/></g>
+<g><path style="opacity:1" fill="#978f89" d="M 49.5,48.5 C 49.5,54.5 49.5,60.5 49.5,66.5C 40.8333,66.5 32.1667,66.5 23.5,66.5C 23.5,60.5 23.5,54.5 23.5,48.5C 32.1667,48.5 40.8333,48.5 49.5,48.5 Z"/></g>
+<g><path style="opacity:1" fill="#63402b" d="M 49.5,47.5 C 49.8333,47.5 50.1667,47.5 50.5,47.5C 56.1667,47.5 61.8333,47.5 67.5,47.5C 67.5,53.8333 67.5,60.1667 67.5,66.5C 61.5,66.5 55.5,66.5 49.5,66.5C 49.5,60.5 49.5,54.5 49.5,48.5C 49.5,48.1667 49.5,47.8333 49.5,47.5 Z"/></g>
+</svg>
+</i>
+            <span class="font-minecraft text-xl font-bold text-accent">AL服务器</span>
+          </div>
+          <p class="text-sm opacity-70">
+            一个充满创意与冒险的Minecraft服务器，
+            在这里探索无限可能，创造属于你的世界。
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4 text-secondary">快速链接</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">关于服务器</a></li>
+            <li><a href="#features" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">特色玩法</a></li>
+            <li><a href="#gallery" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">游戏截图</a></li>
+            <li><a href="#video" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">视频</a></li>
+            <li><a href="#rules" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">服务器规则</a></li>
+            <li><a href="#join" class="opacity-70 hover:opacity-100 hover:text-accent transition-colors">加入我们</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4 text-secondary">联系我们</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center opacity-70">
+              <i class="fa fa-envelope mr-2"></i>
+              <a href="mailto:contact@alserver.com" class="hover:text-accent transition-colors">ailisi6@outlook.com</a>
+            </li>
+            <li class="flex items-center opacity-70">
+              <i class="fa fa-discord mr-2"></i>
+              <span>AL Server#1234</span>
+            </li>
+            <li class="flex items-center opacity-70">
+              <i class="fa fa-clock-o mr-2"></i>
+              <span>24/7 在线支持</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4 text-secondary">订阅更新</h4>
+          <p class="text-sm opacity-70 mb-4">订阅我们的通讯，获取服务器最新动态和活动信息</p>
+          <div class="flex">
+            <input type="email" placeholder="你的邮箱地址" class="flex-1 bg-dark/50 border border-secondary/50 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:border-accent">
+            <button id="dl" class="bg-accent hover:bg-accent/80 text-white px-4 rounded-r-lg text-sm transition-colors">
+              订阅
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-6 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm opacity-60 mb-4 md:mb-0">
+          &copy; 2023 AL Minecraft Server. 保留所有权利。
+        </p>
+        <div class="flex flex-col md:flex-row items-center md:space-x-6">
+          <p class="text-sm opacity-60 mb-2 md:mb-0">
+            备案号：<a href="http://beian.miit.gov.cn/" target="_blank" class="hover:text-accent transition-colors">辽12345678</a>
+          </p>
+          <p class="text-sm opacity-60">
+            抵制不良游戏，注意自我保护，谨防上当受骗。
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- 通知容器 -->
+  <div class="notification-container" id="notificationContainer"></div>
+  <!-- JavaScript -->
+  <script>
+    // 动态背景效果
+    const canvas = document.getElementById('background-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // 设置canvas尺寸
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    // 创建方块粒子
+    class BlockParticle {
+      constructor() {
+        this.size = Math.random() * 10 + 5;
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.color = this.getRandomBlockColor();
+        this.alpha = Math.random() * 0.3 + 0.1;
+      }
+      
+      getRandomBlockColor() {
+        const colors = [         '#3D5A80', '#98C1D9', '#EE6C4D', 
+        '#E0FBFC', '#293241', '#EE6C4D80'
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+    
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      
+      // 边界检测
+      if (this.x < 0 - this.size) this.x = canvas.width + this.size;
+      if (this.x > canvas.width + this.size) this.x = 0 - this.size;
+      if (this.y < 0 - this.size) this.y = canvas.height + this.size;
+      if (this.y > canvas.height + this.size) this.y = 0 - this.size;
+    }
+    
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.alpha;
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.globalAlpha = 1;
+    }
+  }
+  
+  // 创建粒子数组
+  const particles = [];
+  const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+  
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new BlockParticle());
+  }
+  
+  // 动画循环
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // 绘制网格背景
+    ctx.strokeStyle = 'rgba(152, 193, 217, 0.1)';
+    ctx.lineWidth = 1;
+    
+    const gridSize = 40;
+    for (let x = 0; x < canvas.width; x += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, canvas.height);
+      ctx.stroke();
+    }
+    
+    for (let y = 0; y < canvas.height; y += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvas.width, y);
+      ctx.stroke();
+    }
+    
+    // 更新和绘制粒子
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+  
+  // 导航栏滚动效果
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('bg-glass', 'shadow-lg');
+      navbar.classList.remove('bg-transparent');
+    } else {
+      navbar.classList.remove('bg-glass', 'shadow-lg');
+      navbar.classList.add('bg-transparent');
+    }
+  });
+  
+  // 移动端菜单切换
+  const mobileMenuButton = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = mobileMenuButton.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    } else {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    }
+  });
+  
+  // 平滑滚动
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      // 关闭移动端菜单
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // 图片模态框
+  const imageModal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const closeModal = document.getElementById('close-modal');
+  const galleryImages = document.querySelectorAll('#gallery img');
+  
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modalImage.src = img.src.replace('/600/400', '/1200/800');
+      imageModal.classList.remove('hidden');
+      imageModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  closeModal.addEventListener('click', () => {
+    imageModal.classList.add('hidden');
+    imageModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  });
+  
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.classList.add('hidden');
+      imageModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // 复制IP地址功能
+  const copyIpButton = document.getElementById('copy-ip');
+  const ipInput = document.querySelector('input[value="mc.ailisi6.top"]');
+  
+  copyIpButton.addEventListener('click', () => {
+    ipInput.select();
+    document.execCommand('copy');
+    
+    const originalText = copyIpButton.textContent;
+    copyIpButton.textContent = '已复制!';
+    
+    setTimeout(() => {
+      copyIpButton.textContent = originalText;
+    }, 2000);
+    
+    showNotification('服务器地址已复制到剪贴板', 'success');
+  });
+  //订阅
+  const dlButton = document.getElementById('dl');
+  dlButton.addEventListener('click', () => {
+    setTimeout(() => {
+      dlButton.textContent = originalText;
+    }, 2000);
+    
+    showNotification('已订阅', 'success');
+  });
+  
+
+  
+  // 服务器状态获取与更新
+  function fetchServerStatus() {
+    const serverAddress = "mc.mcserverbaba.top";
+    const serverPort = 31953;
+    
+    // 构建完整的服务器地址（包含端口）
+    const fullAddress = `${serverAddress}:${serverPort}`;
+    
+    // 使用Minecraft服务器状态API获取信息
+    fetch(`https://api.mcstatus.io/v2/status/bedrock/${fullAddress}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('服务器状态获取失败');
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.online) {
+          updateServerStatus(data);
+        } else {
+          updateServerOfflineStatus();
+        }
+      })
+      .catch(error => {
+        console.error("获取服务器状态失败:", error);
+        updateServerOfflineStatus();
+      });
+  }
+  
+  function updateServerStatus(data) {
+    // 更新英雄区域状态
+    const heroStatus = document.getElementById('heroStatus');
+    heroStatus.classList.add('online');
+    heroStatus.classList.remove('offline');
+    heroStatus.innerHTML = `
+      <div class="status-dot"></div>
+      <span>服务器在线 - ${data.players.online}/${data.players.max} 玩家</span>
+    `;
+    
+    // 更新状态卡片
+    document.getElementById('statusDot').style.backgroundColor = '#10B981';
+    document.getElementById('statusText').textContent = '在线';
+    document.getElementById('online-count').textContent = `${data.players.online} 人`;
+    document.getElementById('gameVersion').textContent = data.version.name_clean || '1.21.1';
+    document.getElementById('supportedVersion').textContent = `${data.version.name_clean || '1.21.9'}（推荐版本）`;
+    document.getElementById('serverPort').textContent = `端口: ${25565}`;
+  }
+  
+  function updateServerOfflineStatus() {
+    // 更新英雄区域状态
+    const heroStatus = document.getElementById('heroStatus');
+    heroStatus.classList.remove('online');
+    heroStatus.classList.add('offline');
+    heroStatus.innerHTML = `
+      <div class="status-dot"></div>
+      <span>服务器当前离线</span>
+    `;
+    
+    // 更新状态卡片
+    document.getElementById('statusDot').style.backgroundColor = '#EF4444';
+    document.getElementById('statusText').textContent = '离线';
+    document.getElementById('online-count').textContent = '0 人';
+    document.getElementById('gameVersion').textContent = '未知';
+    
+    showNotification('服务器当前离线，请稍后再试喵', 'error');
+  }
+  
+  // 通知系统
+  function showNotification(message, type = 'info') {
+    const container = document.getElementById('notificationContainer');
+    if (!container) return;
+    
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    
+    let icon = 'info-circle';
+    if (type === 'success') icon = 'check-circle';
+    if (type === 'error') icon = 'exclamation-circle';
+    if (type === 'warning') icon = 'exclamation-triangle';
+    
+    notification.innerHTML = `
+      <div class="notification-icon">
+        <i class="fa fa-${icon}"></i>
+      </div>
+      <div class="notification-message">${message}</div>
+    `;
+    
+    container.appendChild(notification);
+    
+    // 显示动画
+    setTimeout(() => {
+      notification.classList.add('show');
+    }, 10);
+    
+    // 自动关闭
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        container.removeChild(notification);
+      }, 300);
+    }, 3000);
+  }
+  
+  // 初始化
+  window.addEventListener('DOMContentLoaded', () => {
+    // 首次获取服务器状态
+    fetchServerStatus();
+    
+    // 每60秒更新一次服务器状态
+    setInterval(fetchServerStatus, 60000);
+    
+    // 创建通知容器样式
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .notification {
+        background: rgba(41, 50, 65, 0.9);
+        backdrop-filter: blur(8px);
+        border-radius: 6px;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-left: 4px solid #3D5A80;
+        max-width: 350px;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .notification.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      .notification-success {
+        border-left-color: #10B981;
+      }
+      .notification-error {
+        border-left-color: #EF4444;
+      }
+      .notification-warning {
+        border-left-color: #F59E0B;
+      }
+      .notification-icon {
+        font-size: 18px;
+        color: #98C1D9;
+      }
+      .notification-success .notification-icon {
+        color: #10B981;
+      }
+      .notification-error .notification-icon {
+        color: #EF4444;
+      }
+      .notification-warning .notification-icon {
+        color: #F59E0B;
+      }
+      .notification-message {
+        color: #E0FBFC;
+        font-size: 14px;
+        flex: 1;
+      }
+    `;
+    document.head.appendChild(style);
+  });
+
+  
+    function updateBusinessTime() {
+        const startTime = new Date('2025-02-13T00:00:00'); // 设置营业开始时间
+        const now = new Date();
+        const diff = now - startTime;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('business-time').textContent = `🏵🐥服务器已运行:${days}天${hours}小时${minutes}分${seconds}秒🐥🏵`;
+    }
+
+    setInterval(updateBusinessTime, 1000); // 每秒更新一次
+    updateBusinessTime(); // 初始化时立即更新
+
+</script>
+</body>
+</html>
+
+
+
+
