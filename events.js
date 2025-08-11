@@ -15,7 +15,7 @@ const ConsoleBillboard = {
 |    ██║  ██║       ███████╗     |
 |    ╚═╝  ╚═╝       ╚══════╝     |
 |   Powered by ailisi6           |
-|   email &#97;&#105;&#108;&#105;&#115;&#105;&#54;&#64;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#46;&#99;&#111;&#109;|
+|   email ailisi6@outlook.com    |
 ----------------------------------  
     `);
   }
@@ -23,4 +23,5 @@ const ConsoleBillboard = {
 
 // 页面加载时执行（保持原有的自动输出功能）
 ConsoleBillboard.billboard();
+
 
