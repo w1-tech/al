@@ -1,27 +1,19 @@
-// 定义一个独立的命名空间（也可直接用函数）
 const ConsoleBillboard = {
-  // 保留原有的输出逻辑
   billboard: function() {
     if (!('console' in window)) {
       return;
     }
-    console.log(`
-----------------------------------
-|                                |           
-|     █████╗        ██╗          |
-|    ██╔══██╗       ██║          |
-|    ███████║       ██║          |
-|    ██╔══██║       ██║          |
-|    ██║  ██║       ███████╗     |
-|    ╚═╝  ╚═╝       ╚══════╝     |
-|   Powered by ailisi6           |
-|   email ailisi6@outlook.com    |
-----------------------------------  
-    `);
+    const encryptedData = "JTVCJTVCJTIyLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSU1Q24lN0MlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0MlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlNUNuJTdDJTIwJTIwJTIwJTIwJTIwJUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk1JTk3JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk1JTk3JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdDJTVDbiU3QyUyMCUyMCUyMCUyMCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5NCVFMiU5NSU5MCVFMiU5NSU5MCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5NyUyMCUyMCUyMCUyMCUyMCUyMCUyMCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5MSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3QyU1Q24lN0MlMjAlMjAlMjAlMjAlRTIlOTYlODglRTIlOTYlODglRTIlOTYlODglRTIlOTYlODglRTIlOTYlODglRTIlOTYlODglRTIlOTYlODglRTIlOTUlOTElMjAlMjAlMjAlMjAlMjAlMjAlMjAlRTIlOTYlODglRTIlOTYlODglRTIlOTUlOTElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0MlNUNuJTdDJTIwJTIwJTIwJTIwJUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk1JTk0JUUyJTk1JTkwJUUyJTk1JTkwJUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk1JTkxJTIwJTIwJTIwJTIwJTIwJTIwJTIwJUUyJTk2JTg4JUUyJTk2JTg4JUUyJTk1JTkxJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdDJTVDbiU3QyUyMCUyMCUyMCUyMCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5MSUyMCUyMCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5MSUyMCUyMCUyMCUyMCUyMCUyMCUyMCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NiU4OCVFMiU5NSU5NyUyMCUyMCUyMCUyMCUyMCU3QyU1Q24lN0MlMjAlMjAlMjAlMjAlRTIlOTUlOUElRTIlOTUlOTAlRTIlOTUlOUQlMjAlMjAlRTIlOTUlOUElRTIlOTUlOTAlRTIlOTUlOUQlMjAlMjAlMjAlMjAlMjAlMjAlMjAlRTIlOTUlOUElRTIlOTUlOTAlRTIlOTUlOTAlRTIlOTUlOTAlRTIlOTUlOTAlRTIlOTUlOTAlRTIlOTUlOTAlRTIlOTUlOUQlMjAlMjAlMjAlMjAlMjAlN0MlNUNuJTdDJTIwJTIwJTIwUG93ZXJlZCUyMGJ5JTIwYWlsaXNpNiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3QyU1Q24lN0MlMjAlMjAlMjBlbWFpbCUyMGFpbGlzaTZAb3V0bG9vay5jb20lMjAlMjAlMjAlMjAlN0MlNUNuLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSUyMiU1RCU1RA==";
+    try {
+      const base64Decoded = atob(encryptedData);
+      const uriDecoded = decodeURI(base64Decoded);
+      const parsedData = JSON.parse(uriDecoded);
+      const asciiArt = parsedData[0][0];
+      console.log(asciiArt);
+    } catch (error) {
+      console.error('邮箱:', error);
+      console.log('ailisi6@outlook.com');
+    }
   }
 };
-
-// 页面加载时执行（保持原有的自动输出功能）
 ConsoleBillboard.billboard();
-
-
