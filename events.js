@@ -9,13 +9,12 @@ const ConsoleBillboard = {
             const uriDecoded = decodeURI(base64Decoded);
             const parsedData = JSON.parse(uriDecoded);
             const asciiArt = parsedData[0][0];
-            // 关键修改：添加%c占位符并绑定蓝色样式
             console.log(`%c${asciiArt}`, 'color: #00a1d6'); 
         } catch (error) {
-            // 错误信息也保持蓝色输出
             console.error(`%c邮箱: ${error}`, 'color: #00a1d6');
             console.log(`%cailisi6@outlook.com`, 'color: #00a1d6');
         }
     }
 };
 ConsoleBillboard.billboard();
+
